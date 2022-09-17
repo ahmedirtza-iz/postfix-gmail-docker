@@ -4,7 +4,6 @@ Basic postfix gmail relay in a docker container.
 https://hub.docker.com/r/ahmedirtza/postfix-ubuntu
 
 # Use the below command (input e-mail & pass of your gmail account) to start the container.
-
 docker run -d --rm -p 9025:25 -e EMAIL="YOUR_EMAIL@gmail.com" -e EMAILPASS="YOUR_PASS" ahmedirtza/postfix-ubuntu
 
 # Use the following command to go inside the container.
