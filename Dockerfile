@@ -16,7 +16,9 @@ postconf -e smtp_sasl_password_maps=hash:/etc/postfix/sasl_passwd && \
 postconf -e smtp_sasl_security_options=noanonymous && \
 postconf -e smtp_tls_CAfile=/etc/postfix/cacert.pem  && \
 postconf -e smtp_use_tls=yes && \
-sed -i '/^smtp_tls_CAfile =/d' /etc/postfix/main.cf && \
+sed -i '/^smtp_tls_CAfile =/d' /etc/postfix/main.cf
+
+COPY init.sh /opt/init.sh
 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* && \
 apt-get autoremove -y && \
